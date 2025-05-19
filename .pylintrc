@@ -1,0 +1,7 @@
+[MASTER]
+# Ignore MicroPython specific modules
+ignored-modules=machine,utime
+
+[MESSAGES CONTROL]
+# Disable the import-error message
+disable=import-error 

@@ -1,0 +1,12 @@
+{
+    "venvPath": ".",
+    "typingsPath": "typings",
+    "extraPaths": [
+        "stubs"
+    ],
+    "ignore": [
+        "**/*"
+    ],
+    "reportMissingImports": false,
+    "reportMissingModuleSource": false
+} 
