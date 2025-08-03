@@ -9,6 +9,7 @@
 'use client'  // Enables client-side interactivity for form handling
 
 import { useState } from 'react'  // React hook for managing form state
+import { ExampleSocialLinks } from '@/components/SocialLinks'  // Social links component
 
 export default function Contact() {
   // Form data state management
@@ -111,11 +112,18 @@ export default function Contact() {
               </button>
             </form>
 
-            {/* Alternative contact methods */}
+            {/* Alternative contact methods with social links */}
             <div className="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700">
               <h3 className="text-lg font-semibold text-gray-800 dark:text-white mb-4">
                 Other Ways to Connect
               </h3>
+              
+              {/* Social links with optimized images */}
+              <div className="mb-4">
+                <ExampleSocialLinks />
+              </div>
+              
+              {/* Traditional contact info */}
               <div className="space-y-2 text-gray-600 dark:text-gray-300">
                 <p>📧 Email: your.email@example.com</p>
                 <p>💼 LinkedIn: linkedin.com/in/yourprofile</p>

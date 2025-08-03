@@ -6,6 +6,8 @@
  * of who you are professionally and personally.
  */
 
+import Image from 'next/image'  // Next.js optimized image component
+
 export default function About() {
   return (
     // Full-screen container with gradient background
@@ -13,15 +15,38 @@ export default function About() {
       <div className="container mx-auto px-4 py-16">
         <div className="max-w-4xl mx-auto">
           
-          {/* Page title */}
-          <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-8">
-            About Me
-          </h1>
+          {/* Page title with profile image */}
+          <div className="text-center mb-8">
+            {/* Profile image with Next.js Image optimization */}
+            <div className="mb-6 flex justify-center">
+              <div className="relative">
+                <Image 
+                  src="/images/donut_tree.png" 
+                  alt="My profile photo"
+                  width={350} 
+                  height={350}
+                  className="rounded-full shadow-lg border-4 border-white dark:border-gray-700"
+                  priority  // Load this image immediately as it's above the fold
+                />
+                {/* Decorative ring around the image */}
+                <div className="absolute inset-0 rounded-full border-4 border-blue-200 dark:border-blue-800 animate-pulse"></div>
+              </div>
+            </div>
+            
+            <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+              About Me
+            </h1>
+            
+            {/* Brief introduction */}
+            <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+              Welcome to my personal website! I'm passionate about technology and innovation.
+            </p>
+          </div>
           
           {/* Main content section */}
           <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8 mb-8">
             <h2 className="text-2xl font-semibold text-gray-800 dark:text-white mb-4">
-              Welcome to my personal website! Yippee!
+              Welcome to my personal website!
             </h2>
             <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
               I'm passionate about technology and innovation. This website serves as a platform

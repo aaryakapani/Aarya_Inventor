@@ -32,7 +32,7 @@ export default function Navigation() {
           {/* Logo/Brand section */}
           <div className="flex items-center">
             <Link href="/" className="text-xl font-bold text-gray-900 dark:text-white">
-              Your Name  {/* TODO: Replace with your actual name */}
+              Aarya's Sandbox
             </Link>
           </div>
           

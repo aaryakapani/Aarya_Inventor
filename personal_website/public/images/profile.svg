@@ -1,0 +1,13 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle -->
+  <circle cx="100" cy="100" r="100" fill="#3B82F6"/>
+  
+  <!-- Person icon -->
+  <circle cx="100" cy="70" r="25" fill="white"/>
+  <path d="M60 130C60 110 78 95 100 95C122 95 140 110 140 130" stroke="white" stroke-width="8" stroke-linecap="round"/>
+  
+  <!-- Add some decorative elements -->
+  <circle cx="70" cy="60" r="8" fill="white" opacity="0.3"/>
+  <circle cx="130" cy="80" r="6" fill="white" opacity="0.2"/>
+  <circle cx="85" cy="140" r="4" fill="white" opacity="0.4"/>
+</svg> 
