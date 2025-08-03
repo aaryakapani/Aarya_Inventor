@@ -1,27 +1,66 @@
 {
+  // TypeScript Configuration
+  // Why needed: TypeScript provides type safety, catching errors at compile time
+  // and providing better IntelliSense support in your editor
   "compilerOptions": {
-    "target": "es5",
-    "lib": ["dom", "dom.iterable", "es6"],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "noEmit": true,
-    "esModuleInterop": true,
-    "module": "esnext",
-    "moduleResolution": "bundler",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "jsx": "preserve",
-    "incremental": true,
+    // Target JavaScript version for compilation
+    "target": "es5",  // Ensures compatibility with older browsers
+    
+    // Available libraries and APIs
+    "lib": ["dom", "dom.iterable", "es6"],  // DOM types, iterables, ES6 features
+    
+    // Allow JavaScript files alongside TypeScript
+    "allowJs": true,  // Enables gradual migration from JS to TS
+    
+    // Skip type checking of declaration files
+    "skipLibCheck": true,  // Speeds up compilation
+    
+    // Enable all strict type checking options
+    "strict": true,  // Catches more potential errors
+    
+    // Don't emit output files (Next.js handles this)
+    "noEmit": true,  // Next.js handles compilation
+    
+    // Enable ES module interop
+    "esModuleInterop": true,  // Better compatibility with CommonJS modules
+    
+    // Module system
+    "module": "esnext",  // Use ES modules
+    "moduleResolution": "bundler",  // Optimized for bundlers like webpack
+    
+    // Enable JSON module imports
+    "resolveJsonModule": true,  // Allows importing JSON files as modules
+    
+    // Ensure each file is treated as a separate module
+    "isolatedModules": true,  // Required for Next.js
+    
+    // Preserve JSX for Next.js processing
+    "jsx": "preserve",  // Next.js handles JSX transformation
+    
+    // Enable incremental compilation
+    "incremental": true,  // Speeds up subsequent compilations
+    
+    // Next.js TypeScript plugin
     "plugins": [
       {
-        "name": "next"
+        "name": "next"  // Provides Next.js-specific type checking
       }
     ],
+    
+    // Path mapping for cleaner imports
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./*"]  // Allows @/ imports (e.g., @/components/Button)
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules"]
+  
+  // Files to include in compilation
+  "include": [
+    "next-env.d.ts",  // Next.js type definitions
+    "**/*.ts",        // All TypeScript files
+    "**/*.tsx",       // All TypeScript React files
+    ".next/types/**/*.ts"  // Next.js generated types
+  ],
+  
+  // Files to exclude from compilation
+  "exclude": ["node_modules"]  // Don't type-check node_modules
 } 

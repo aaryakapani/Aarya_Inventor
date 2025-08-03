@@ -1,33 +1,50 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/**
+ * Global CSS Styles
+ * 
+ * Why needed: This file contains global styles that apply to your entire application.
+ * It imports Tailwind CSS, sets up CSS custom properties for theming,
+ * and provides base styling for the body element.
+ */
 
+/* Import Tailwind CSS layers */
+@tailwind base;      /* Base styles (reset, defaults) */
+@tailwind components; /* Component classes */
+@tailwind utilities;  /* Utility classes */
+
+/* CSS Custom Properties for theming */
+/* Why needed: CSS variables allow for easy theme switching and consistent colors */
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --foreground-rgb: 0, 0, 0;           /* Text color for light mode */
+  --background-start-rgb: 214, 219, 220; /* Background start color */
+  --background-end-rgb: 255, 255, 255;   /* Background end color */
 }
 
+/* Dark mode support using system preferences */
+/* Why needed: Automatically adapts to user's system theme preference */
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --foreground-rgb: 255, 255, 255;    /* Text color for dark mode */
+    --background-start-rgb: 0, 0, 0;     /* Background start color */
+    --background-end-rgb: 0, 0, 0;       /* Background end color */
   }
 }
 
+/* Global body styles */
+/* Why needed: Sets up the base appearance of your website */
 body {
-  color: rgb(var(--foreground-rgb));
+  color: rgb(var(--foreground-rgb));  /* Use CSS variable for text color */
   background: linear-gradient(
       to bottom,
       transparent,
       rgb(var(--background-end-rgb))
     )
-    rgb(var(--background-start-rgb));
+    rgb(var(--background-start-rgb));  /* Gradient background using CSS variables */
 }
 
+/* Custom utility classes */
+/* Why needed: Extends Tailwind with custom utilities */
 @layer utilities {
   .text-balance {
-    text-wrap: balance;
+    text-wrap: balance;  /* Modern CSS for better text wrapping */
   }
 } 

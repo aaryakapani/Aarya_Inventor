@@ -1,38 +1,60 @@
-'use client'
+/**
+ * Contact Page Component
+ * 
+ * Why needed: This page provides a way for visitors to get in touch with you.
+ * It includes a contact form for direct communication and displays alternative
+ * contact methods like email and social media links.
+ */
 
-import { useState } from 'react'
+'use client'  // Enables client-side interactivity for form handling
+
+import { useState } from 'react'  // React hook for managing form state
 
 export default function Contact() {
+  // Form data state management
+  // Why needed: Tracks user input in real-time and provides controlled form inputs
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     message: ''
   })
 
+  // Handle form submission
+  // Why needed: Processes the form data when user clicks submit
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    // Handle form submission here
+    e.preventDefault()  // Prevent default form submission
+    // TODO: Implement actual form submission (email service, API call, etc.)
     console.log('Form submitted:', formData)
   }
 
+  // Handle input changes
+  // Why needed: Updates form state as user types
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
     setFormData(prev => ({
       ...prev,
-      [name]: value
+      [name]: value  // Update specific field while preserving others
     }))
   }
 
   return (
+    // Full-screen container with gradient background
     <div className="min-h-screen bg-gradient-to-br from-green-50 to-emerald-100 dark:from-gray-900 dark:to-gray-800">
       <div className="container mx-auto px-4 py-16">
         <div className="max-w-2xl mx-auto">
+          
+          {/* Page title */}
           <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-8 text-center">
             Get in Touch
           </h1>
           
+          {/* Contact form container */}
           <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8">
+            
+            {/* Contact form */}
             <form onSubmit={handleSubmit} className="space-y-6">
+              
+              {/* Name input field */}
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                   Name
@@ -48,6 +70,7 @@ export default function Contact() {
                 />
               </div>
 
+              {/* Email input field */}
               <div>
                 <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                   Email
@@ -63,6 +86,7 @@ export default function Contact() {
                 />
               </div>
 
+              {/* Message textarea */}
               <div>
                 <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                   Message
@@ -78,6 +102,7 @@ export default function Contact() {
                 />
               </div>
 
+              {/* Submit button */}
               <button
                 type="submit"
                 className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors"
@@ -86,6 +111,7 @@ export default function Contact() {
               </button>
             </form>
 
+            {/* Alternative contact methods */}
             <div className="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700">
               <h3 className="text-lg font-semibold text-gray-800 dark:text-white mb-4">
                 Other Ways to Connect
